@@ -5,7 +5,7 @@ FROM byte13/nodejs-ubuntu:latest
 # Install usefull utilities
 RUN apt-get update && \
     apt-get -y dist-upgrade
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apt-utils curl wget sudo unzip iproute2 iputils-ping dnsutils net-tools nmap build-essential git
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apt-utils curl wget sudo unzip iproute2 iputils-ping dnsutils net-tools nmap build-essential hping3 git
 
 #
 # Next line as workaround due to some access errors since NodeJS 8
