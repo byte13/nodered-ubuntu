@@ -1,7 +1,7 @@
 # nodered-alpine
 NodeRED on Alpine 
 
-This Docker file adds NodeRED on top of byte13/nodejs-alpine
+This Docker file adds NodeRED on top of byte13/nodejs-ubuntu
 The build possibly updates the base image and utilities.
 
 To run this image and make it accessible on port 80 :
