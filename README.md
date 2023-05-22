@@ -1,5 +1,5 @@
-# nodered-alpine
-NodeRED on Alpine 
+# nodered-ubuntu
+NodeRED on Ubuntu 
 
 This Docker file adds NodeRED on top of byte13/nodejs-ubuntu
 The build possibly updates the base image and utilities.
