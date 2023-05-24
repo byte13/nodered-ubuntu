@@ -16,8 +16,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apt-utils curl wget sudo u
 # scripts are no longer allowed to create files and directories in their module.
 # A simple workaround, which makes sense in a docker environment, is to set 
 # the NPM default global user back to root, like so:
-
-RUN npm -g config set user root
+#RUN npm -g config set user root
 
 RUN npm install -g openid-connect && \
     npm install -g --unsafe-perm node-red node-red-admin && \
