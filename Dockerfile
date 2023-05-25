@@ -3,8 +3,9 @@
 FROM byte13/nodejs-ubuntu:latest
 
 # Install usefull utilities
-RUN apt-get update && \
-    apt-get -y dist-upgrade
+RUN sudo apt-get update && \
+    sudo apt-get -y dist-upgrade && \
+    sudo apt-get -y auto-remove
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install apt-utils curl wget sudo unzip iproute2 iputils-ping dnsutils net-tools nmap build-essential hping3 git
 
 #
@@ -29,8 +30,7 @@ RUN npm install -g openid-connect && \
 #    sudo apt-key add mosquitto-repo.gpg.key && \
 #    cd /etc/apt/sources.list.d/ && \
 #    sudo wget http://repo.mosquitto.org/debian/mosquitto-stretch.list && \
-#    sudo apt-get update && \
-#    sudo apt-get install mosquitto-clients python-mosquitto 
+RUN sudo apt-get -y install mosquitto-clients
 
 
 RUN /usr/sbin/groupadd nodered -g 1234 \ 
@@ -48,5 +48,6 @@ USER nodered
 # Define what to start by defaut when running the container
 ENV NRPORT=7777
 
-CMD /usr/local/bin/node-red -s ${LOCALSETTINGS} -p ${NRPORT} 
+#CMD /usr/local/bin/node-red -s ${LOCALSETTINGS} -p ${NRPORT} 
+CMD /usr/local/bin/node-red -p ${NRPORT} 
 
